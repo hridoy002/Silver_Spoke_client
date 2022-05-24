@@ -1,0 +1,31 @@
+[
+    {
+      "_id": 1,
+      "name": "Chain Wheel",
+      "price":"500"
+    },
+    {
+      "_id": 2,
+      "name": "Free Wheel",
+      "price":"700"
+    }
+    ,
+    {
+      "_id": 3,
+      "name": "Rim",
+      "price":"1200"
+    }
+    ,
+    {
+      "_id": 4,
+      "name": "Hub",
+      "price":"450"
+    }
+    ,
+    {
+      "_id": 5,
+      "name": "Handle Bar",
+      "price":"1500"
+    }
+
+]
