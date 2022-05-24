@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from './Banner';
 import Information from './Information';
+import Stat from './Stat';
+
 import Tools from './Tools';
 
 const Home = () => {
@@ -12,6 +14,7 @@ const Home = () => {
             </div>
             <Information />
             <Tools />
+            <Stat />
         </div>
     );
 };
