@@ -2,30 +2,41 @@
     {
       "_id": 1,
       "name": "Chain Wheel",
-      "price":"500"
+      "description" :"Chain wheel",
+      "price":"500",
+      "img": "https://i.ibb.co/Pw4QP6S/chain-Wheel.jpg"
     },
     {
       "_id": 2,
       "name": "Free Wheel",
-      "price":"700"
+      "description" :"Free wheel",
+      "price":"700",
+      "img": "https://i.ibb.co/hZDMjJf/free-Wheel.jpg" 
+
     }
     ,
     {
       "_id": 3,
       "name": "Rim",
-      "price":"1200"
+      "description" :"Rim",
+      "price":"1200",
+      "img": "https://i.ibb.co/zJVtSXJ/rim.png"
     }
     ,
     {
       "_id": 4,
       "name": "Hub",
-      "price":"450"
+      "description" :"Hub",
+      "price":"450",
+      "img": "https://i.ibb.co/QCLxGr1/hub.jpg"
     }
     ,
     {
       "_id": 5,
       "name": "Handle Bar",
-      "price":"1500"
+      "description" :"Handle bar",
+      "price":"1500",
+      "img": "https://i.ibb.co/vH8hgWs/handlebar.jpg"
     }
 
 ]
