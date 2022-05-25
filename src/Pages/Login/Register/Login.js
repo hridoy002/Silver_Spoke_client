@@ -7,9 +7,10 @@ import Loading from '../../shared/Loading'
 
 
 const Login = () => {
-    const navigate = useNavigate
+    
     // const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
     const [
         signInWithEmailAndPassword,
         user,
