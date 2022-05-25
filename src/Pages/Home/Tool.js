@@ -9,7 +9,7 @@ const Tool = ({ tool }) => {
                 <h2 class="card-title">{name}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <p>{price}</p>
-                <div class="card-actions justify-end">
+                <div class="card-actions justify-start">
                     <button class="btn btn-primary">Buy Now</button>
                 </div>
             </div>

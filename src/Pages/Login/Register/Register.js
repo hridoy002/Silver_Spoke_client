@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import Loading from '../../shared/Loading';
 const Register = () => {
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
+    // update name 
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -30,8 +32,9 @@ const Register = () => {
     const onSubmit = async data => {
 
         await createUserWithEmailAndPassword(data.email, data.password);
-        // await updateProfile({ displayName: data.name });
-        console.log()
+        await updateProfile({ displayName: data.name });
+        
+        console.log(data)
         
     };
     return (
