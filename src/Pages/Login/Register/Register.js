@@ -4,15 +4,15 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import Loading from '../../shared/Loading';
-import Social from '../../shared/Social';
+
 const Register = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
     // update name 
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [updateProfile] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -20,18 +20,19 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    if (user) {
+    if (user || googleUser) {
         navigate(from, { replace: true })
     }
-    if(loading){
+    if(loading || googleLoading){
         return <Loading />
     }
 
     // error 
-    let errorMessage;
-    if (error ) {
-        errorMessage = <p>{error?.message }</p>
-    }
+   // error 
+   let errorMessage;
+   if (error || googleError) {
+       errorMessage = <p>{error?.message || googleError?.message}</p>
+   }
     // handle form submit 
     const onSubmit = async data => {
 
@@ -130,7 +131,8 @@ const Register = () => {
 
                     <p><small> Already have an account? <Link to="/login" className='text-secondary'> Please Login</Link></small></p>
 
-                    <Social />
+                    <div className="divider">OR</div>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline text-white border rounded-xl  bg-gradient-to-r from-primary">Continue with Google</button>
                 </div>
                 
             </div >

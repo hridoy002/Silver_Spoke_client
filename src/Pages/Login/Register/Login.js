@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNavigate,Link, useLocation } from 'react-router-dom';
-import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../../shared/Loading'
@@ -11,8 +11,9 @@ const Login = () => {
 
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
     const [
@@ -22,16 +23,16 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    if (user) {
+    if (user || googleUser) {
         navigate(from, { replace: true })
     }
-    if(loading){
+    if (loading || googleLoading) {
         return <Loading />
     }
 
     // error 
     let errorMessage;
-    if (error ) {
+    if (error || googleError) {
         errorMessage = <p>{error?.message}</p>
     }
 
@@ -108,7 +109,8 @@ const Login = () => {
 
                     <p><small>Are you new In Silver Spoke? <Link to="/register" className='text-primary'> Create New Account</Link></small></p>
                 </div>
-                <Social />
+                <div className="divider">OR</div>
+                <button onClick={() => signInWithGoogle()} className="btn btn-outline text-white border rounded-xl  bg-gradient-to-r from-primary">Continue with Google</button>
             </div>
         </div>
     );

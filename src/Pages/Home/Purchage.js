@@ -13,16 +13,14 @@ const Purchage = () => {
     }
         , []);
 
-        const { register, handleSubmit } = useForm();
-        const onSubmit = data => console.log(data);
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
     return (
-        <div className='my-20 grid grid-cols-2'>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                    <img src={tool.img} alt="Shoes" className="rounded-xl" />
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">{tool.name}</h2>
+        <div className='grid place-items-center my-20'>
+            <div class="card lg:card-side bg-base-100 shadow-xl">
+                <figure><img src={tool.img} className='w-[400px]' alt="Album" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">{tool.name}</h2>
                     <p>Specication: {tool.description}</p>
                     <p>Available: {tool.quantity}</p>
                     <p>Min. Order: {tool.min}</p>
