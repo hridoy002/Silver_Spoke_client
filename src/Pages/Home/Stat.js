@@ -2,7 +2,7 @@ import React from 'react';
 import global from '../../Assets/Images/undraw_connected_world_wuay.svg'
 const Stat = () => {
     return (
-        <div className='grid place-items-center my-12'>
+        <div className='grid place-items-center my-20'>
             <h2 className='text-2xl font-bold uppercase '>This is our <span className='text-primary'>award</span></h2>
             <p className='text-lg tracking-wider mt-2'>We don't mess up with quality</p>
             <div className="stats stats-vertical lg:stats-horizontal shadow-xl p-5">
@@ -10,7 +10,7 @@ const Stat = () => {
 
                 <div className="stat">
                     <div className="stat-figure text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                         </svg>
                     </div>
@@ -38,7 +38,7 @@ const Stat = () => {
                 </div>
                 <div className="stat">
                     <div className="stat-figure text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
@@ -48,6 +48,10 @@ const Stat = () => {
                 </div>
 
             </div>
+            {/* <div className='my-5 '>
+                <h2 className='text-3xl text-center'>Ready to Get Started?</h2>
+                <p className='text-accent'>Our team is on standby to help you with your industrial manufacturing, maintenance and repair needs as well as your process, safety and flow control needs. Contact us today, and we'lll get started.</p>
+            </div> */}
         </div>
     );
 };

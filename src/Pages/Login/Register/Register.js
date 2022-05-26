@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import Loading from '../../shared/Loading';
+import Social from '../../shared/Social';
 const Register = () => {
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
     // update name 
@@ -16,8 +20,8 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    if(user){
-        navigate('/');
+    if (user) {
+        navigate(from, { replace: true })
     }
     if(loading){
         return <Loading />
@@ -120,15 +124,17 @@ const Register = () => {
                         </div>
 
                         {errorMessage}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn w-full max-w-xs text-white bg-gradient-to-r from-primary' type="submit" value="Sign Up" />
                     </form>
 
 
                     <p><small> Already have an account? <Link to="/login" className='text-secondary'> Please Login</Link></small></p>
 
-                    
+                    <Social />
                 </div>
+                
             </div >
+            
         </div >
     );
 };

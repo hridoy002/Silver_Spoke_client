@@ -1,14 +1,18 @@
 import React from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useNavigate,Link, useLocation } from 'react-router-dom';
+import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../../shared/Loading'
+import Social from '../../shared/Social';
 
 
 const Login = () => {
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     
-    // const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
     const [
@@ -18,8 +22,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    if(user){
-        navigate('/')
+    if (user) {
+        navigate(from, { replace: true })
     }
     if(loading){
         return <Loading />
@@ -99,11 +103,12 @@ const Login = () => {
                         </div>
 
                         {errorMessage}
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs text-white bg-gradient-to-r from-primary' type="submit" value="Login" />
                     </form>
 
                     <p><small>Are you new In Silver Spoke? <Link to="/register" className='text-primary'> Create New Account</Link></small></p>
                 </div>
+                <Social />
             </div>
         </div>
     );
