@@ -5,7 +5,7 @@ const Stat = () => {
         <div className='grid place-items-center my-20'>
             <h2 className='text-2xl font-bold uppercase '>This is our <span className='text-primary'>award</span></h2>
             <p className='text-lg tracking-wider mt-2'>We don't mess up with quality</p>
-            <div className="stats stats-vertical lg:stats-horizontal shadow-xl p-5">
+            <div className="stats stats-vertical lg:stats-horizontal shadow-md lg:w-full p-5 lg:p-20">
 
 
                 <div className="stat">

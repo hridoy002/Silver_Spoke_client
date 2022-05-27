@@ -13,7 +13,7 @@ const Header = () => {
     localStorage.removeItem('accessToken')
   };
 
-  const menuItems = <>
+  const menuItems = <div className='text-lg font-semibold flex'>
     <li><Link to='/'>Home</Link></li>
     <li> <Link to='/blogs'>Blogs</Link></li>
  
@@ -21,14 +21,14 @@ const Header = () => {
     {user ? <>
       <li><Link to="/dashboard">Dashboard</Link></li>
       <li><Link to="/">{user.displayName}</Link></li>
-      <button onClick={logout} className="btn btn-ghost">Log Out</button>
+      <button onClick={logout} className="btn btn-ghost font-semibold text-lg">Log Out</button>
     </> : <>
-      <li><Link to="/login">Login</Link></li>
+      <li><Link className='font-semibold' to="/login">Login</Link></li>
       <li><Link to="/register">Sign Up</Link></li>
     </>
 
     }
-  </>
+  </div>
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
