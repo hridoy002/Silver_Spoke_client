@@ -18,8 +18,8 @@ const Home = () => {
             <Stat />
             <Reviews />
             <div style={{backgroundImage: `url(${extraBanner})`}} className='bg-cover lg:bg-center' >
-                <div className='grid place-items-center align-middle p-20'>
-                <h2 className='text-5xl font-bold text-accent   lg:text-white lg:h-[400px]'>Lets Keep This Riding Happy</h2>
+                <div className='grid place-items-center align-middle p-20 lg:h-[400px]'>
+                <h2 style={{backgroundColor:"#0006"}} className='text-5xl font-bold  p-5  text-white '>Lets Keep This Riding Happy</h2>
                 
                 
                 </div>

@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Anit Kumar",
       "email": "Eliseo@gardner.biz",
+      "ratings": 4.7,
       "body": "This is one of the best cycle parts production house!"
     },
     {
@@ -11,6 +12,7 @@
       "id": 2,
       "name": "Sabbir Rahman",
       "email": "Jayne_Kuhic@sydney.com",
+      "ratings": 4.7,
       "body": "They are best,I beleave them."
     },
     {
@@ -18,6 +20,7 @@
       "id": 3,
       "name": "Ali Murshed Shah",
       "email": "Nikita@garfield.biz",
+      "ratings": 4.2,
       "body": "The underated company.But deliver the best quality"
     },
     {
@@ -25,13 +28,16 @@
       "id": 4,
       "name": "DE Silva",
       "email": "Lew@alysha.tv",
+      "ratings": 4.2,
       "body": "I satisfied to use their products."
     },
     {
       "postId": 1,
       "id": 5,
       "name": "Devid Via",
+      
       "email": "Hayden@althea.biz",
+      "ratings": 4.6,
       "body": "They are good with their products.But there are no limit of improvising.I think ,their client support should be more improved.Overall they are good"
     }
   ]

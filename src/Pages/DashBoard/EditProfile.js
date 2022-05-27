@@ -1,6 +1,8 @@
 import React from 'react';
-
+import {useParams} from "react-router-dom"
 const EditProfile = () => {
+    const {toolId} = useParams();
+    console.log(toolId)
     const handleForm = event => {
         event.preventDefault();
         const address = event.target.address.value; 
@@ -16,12 +18,12 @@ const EditProfile = () => {
             phone: phone,
             linkedin: linkedin
         }
-        console.log(edit)
+        fetch('')
     }
     return (
         <div className='grid place-items-center  my-20'>
             <h1 className='text-left'>Edit Your Profile</h1>
-            
+            <h3>id:{toolId}</h3>
             <div className='w-2/4'>
             <form onSubmit={handleForm} action="" className='mt-10'>
                 <input type="text" placeholder="Name" className="input input-bordered input-primary w-full  mb-3" />

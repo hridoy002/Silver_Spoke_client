@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewContainer = ({ review }) => {
-    const { name, body } = review;
+    const { name, body,ratings } = review;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <div className="card-body">
@@ -14,6 +14,7 @@ const ReviewContainer = ({ review }) => {
                 </div>
                 
                 <p>{body}</p>
+                <p>Rating: {ratings}</p>
 
             </div>
         </div>
