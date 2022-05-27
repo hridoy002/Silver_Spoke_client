@@ -3,7 +3,7 @@ import img from '../../Assets/Images/banner/1.jpg'
 
 const Information = () => {
     return (
-        <div className='hidden  lg:block p-16 mt-[-150px]   w-3/4 bg-accent m-auto mb-10'>
+        <div className='p-5 lg:p-16 mt-20 lg:mt-[-150px]   w-3/4 bg-accent m-auto mb-10'>
             <div className='mb-10'>
                 <div className='' >
                     <h2 className='text-3xl text-primary tracking-wide font-bold'><span className='text-white'>WELCOME</span> SILVER SPOKE</h2>
@@ -14,7 +14,7 @@ const Information = () => {
                 <p className='text-xl text-white'>Complete Bicycle, Bicycle Spare Parts & Accessories Manufacture</p>
             </div>
 
-            <div className='grid lg:grid-cols-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-2'>
             <div className=''>
                     <img className='rounded-lg' src={img} alt="" />
                 </div>

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../../shared/Loading'
-import Social from '../../shared/Social';
+import useToken from '../../../Hooks/useToken';
 
 
 const Login = () => {
@@ -22,10 +22,16 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    
+    // const [token] = useToken(user || googleUser);
+    useEffect(() => {
+        if (user) {
+            // navigate('/');
+            navigate(from, { replace: true });
+            
+        }
+    }, [ user,from, navigate])
 
-    if (user || googleUser) {
-        navigate(from, { replace: true })
-    }
     if (loading || googleLoading) {
         return <Loading />
     }

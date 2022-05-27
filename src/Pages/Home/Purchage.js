@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import BuyModal from './BuyModal';
 
 
 const Purchage = () => {
@@ -13,6 +14,8 @@ const Purchage = () => {
     }
         , []);
 
+    const [buy,setBuy] = useState(null);
+
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
     return (
@@ -23,19 +26,15 @@ const Purchage = () => {
                     <h2 class="card-title">{tool.name}</h2>
                     <p>Specication: {tool.description}</p>
                     <p>Available: {tool.quantity}</p>
-                    <p>Min. Order: {tool.min}</p>
+                    <p>Min. Order: {tool.minOrder}</p>
                     <p>Unit Price: {tool.price} ৳</p>
-                    <form onSubmit={handleSubmit(onSubmit)}>
                     
-                        <input type="number" {...register("quantity", { min: 18, max: 99 })} />
-                        <input type="submit" />
-                    </form>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <label onClick={()=> setBuy(tool)} for="my-modal-6" className="btn btn-primary">Buy Now</label>
                     </div>
                 </div>
             </div>
-
+            {buy && <BuyModal buy={buy} setBuy={setBuy}></BuyModal>}
         </div>
     );
 };

@@ -10,7 +10,7 @@ const Header = () => {
   const [user, loading, error] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
-
+    localStorage.removeItem('accessToken')
   };
 
   const menuItems = <>
@@ -23,7 +23,7 @@ const Header = () => {
       <button onClick={logout} className="btn btn-ghost">Log Out</button>
     </> : <>
       <li><Link to="/login">Login</Link></li>
-      <li><Link to="/register">Register</Link></li>
+      <li><Link to="/register">Sign Up</Link></li>
     </>
 
     }

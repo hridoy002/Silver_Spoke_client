@@ -2,6 +2,7 @@ import { Routes,Route } from "react-router-dom";
 import Blogs from "./Pages/Blogs/Blogs";
 import AddReview from "./Pages/DashBoard/AddReview";
 import DashBoard from "./Pages/DashBoard/DashBoard";
+import EditProfile from "./Pages/DashBoard/EditProfile";
 import MyOrder from "./Pages/DashBoard/MyOrder";
 import MyProfile from "./Pages/DashBoard/MyProfile";
 import Home from "./Pages/Home/Home";
@@ -28,7 +29,9 @@ function App() {
             <Route index element={<MyOrder />} />
             <Route path="addReview" element={<AddReview />} />
             <Route path="myprofile" element={<MyProfile  />} />
+            
           </Route>
+          <Route path="/editprofile" element={<EditProfile />} />
           <Route path="/blogs" element={<Blogs/>} />
           <Route path="/portfolio" element={<MyPortfolio/>} />
           <Route path="/login" element={<Login/>} />

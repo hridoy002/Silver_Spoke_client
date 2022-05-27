@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import Loading from '../../shared/Loading';
+import useToken from '../../../Hooks/useToken';
 
 const Register = () => {
     const location = useLocation();
@@ -20,19 +21,23 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    
+    const [token] = useToken(user || googleUser);
     if (user || googleUser) {
-        navigate(from, { replace: true })
+        navigate('/')
     }
-    if(loading || googleLoading){
-        return <Loading />
-    }
-
+    
+    
     // error 
    // error 
    let errorMessage;
    if (error || googleError) {
        errorMessage = <p>{error?.message || googleError?.message}</p>
    }
+
+   if(loading || googleLoading){
+    return <Loading />
+}
     // handle form submit 
     const onSubmit = async data => {
 
@@ -43,7 +48,7 @@ const Register = () => {
         
     };
     return (
-        <div className='h-screen flex justify-center items-center'>
+        <div className='h-full flex justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl flex">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign Up</h2>
