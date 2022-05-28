@@ -1,7 +1,9 @@
 import { Routes,Route } from "react-router-dom";
 import Blogs from "./Pages/Blogs/Blogs";
+import AddProducts from "./Pages/DashBoard/AddProducts";
 import AddReview from "./Pages/DashBoard/AddReview";
 import Admin from "./Pages/DashBoard/Admin";
+import AllOrders from "./Pages/DashBoard/AllOrders";
 import DashBoard from "./Pages/DashBoard/DashBoard";
 import EditProfile from "./Pages/DashBoard/EditProfile";
 import MyOrder from "./Pages/DashBoard/MyOrder";
@@ -31,6 +33,8 @@ function App() {
             <Route path="addReview" element={<AddReview />} />
             <Route path="myprofile" element={<MyProfile  />} />
             <Route path="admin" element={<Admin />} />
+            <Route path="allorder" element={<AllOrders />} />
+            <Route path="addproducts" element={<AddProducts />} />
             
           </Route>
           <Route path="/editprofile" element={<EditProfile />} />
@@ -50,3 +54,7 @@ function App() {
 }
 
 export default App;
+
+
+// after deploy firebase live website error problem solve:
+// app.use(cors({ origin : "YOUR_FIREBASE_LIVE_LINK" }))
