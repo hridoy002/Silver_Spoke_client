@@ -8,7 +8,7 @@ const Purchage = () => {
     const { toolId } = useParams();
     const [tool, setTool] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${toolId}`)
+        fetch(`https://warm-brushlands-82465.herokuapp.com/tools/${toolId}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }

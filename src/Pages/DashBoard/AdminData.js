@@ -4,7 +4,7 @@ import Loading from '../shared/Loading';
 const AdminData = ({user,index}) => {
     const {email,rule} = user;
     const makeAdmin =() =>{
-            fetch(`http://localhost:5000/user/admin/${email}`,{
+            fetch(`https://warm-brushlands-82465.herokuapp.com/user/admin/${email}`,{
             method: "PUT",
             headers:{
                 'content-type': 'application/json'

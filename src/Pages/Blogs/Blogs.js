@@ -54,7 +54,9 @@ const Blogs = () => {
                 You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?
                 </div>
                 <div className="collapse-content">
-                    <p className='text-lg font-bold text-primary'></p>
+                    <p className='text-lg font-bold text-primary'>For searching  products from array I use there filter method.Because of using filter method easily find a products object.
+                    
+                    </p>
                 </div>
             </div>
             <div tabindex="0" className="collapse collapse-arrow border border-base-300 bg-base-100 ">
@@ -76,3 +78,22 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+
+// const products = [{
+//     name: 'Bat',
+//     price: 700,
+//     description: 'Kashmiri willow'
+// },{
+//     name: 'Ball',
+//     price: 700,
+//     description: 'Kokabura sd ball'
+// },
+// {
+//     name: 'Stump',
+//     price: 700,
+//     description: 'Wooden'
+// }];
+
+// const search = products.filter(product => product.name == 'Bat');
+// console.log(search)

@@ -1,8 +1,11 @@
 import React from 'react';
-import {useParams} from "react-router-dom"
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
+
+import auth from '../../firebase.init';
 const EditProfile = () => {
-    const {toolId} = useParams();
-    console.log(toolId)
+    const [user] = useAuthState(auth);
+    const {_id} = useParams();
     const handleForm = event => {
         event.preventDefault();
         const address = event.target.address.value; 
@@ -18,12 +21,23 @@ const EditProfile = () => {
             phone: phone,
             linkedin: linkedin
         }
-        fetch('')
+        fetch(`https://warm-brushlands-82465.herokuapp.com/profile?email=${user.email}`,{
+            method: "PUT",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(edit)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            alert('Profile Updated');
+            event.target.reset();
+        })
     }
     return (
         <div className='grid place-items-center  my-20'>
             <h1 className='text-left'>Edit Your Profile</h1>
-            <h3>id:{toolId}</h3>
+            <h3></h3>
             <div className='w-2/4'>
             <form onSubmit={handleForm} action="" className='mt-10'>
                 <input type="text" placeholder="Name" className="input input-bordered input-primary w-full  mb-3" />

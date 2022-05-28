@@ -1,4 +1,5 @@
 import { Routes,Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Blogs from "./Pages/Blogs/Blogs";
 import AddProducts from "./Pages/DashBoard/AddProducts";
 import AddReview from "./Pages/DashBoard/AddReview";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/*" element={<NotFound />} />
        </Routes>
        <Footer />
+       <ToastContainer />
     </div>
 
 

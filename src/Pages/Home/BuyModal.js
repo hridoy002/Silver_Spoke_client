@@ -27,7 +27,7 @@ const BuyModal = ({ buy,setBuy }) => {
             address: address,
             phone: phone 
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://warm-brushlands-82465.herokuapp.com/order', {
       method: "POST",
       headers: {
         "content-type": "application/json"

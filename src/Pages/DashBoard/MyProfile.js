@@ -1,9 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useNavigate, useParams } from 'react-router-dom';
 
 const MyProfile = () => {
+    const {_id} = useParams()
+    console.log(_id)
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     return (
